@@ -12,6 +12,8 @@ Keyboard Maintainer: [foostan](https://github.com/foostan/) [@foostan](https://t
 Hardware Supported: Crkbd PCB, Pro Micro  
 Hardware Availability: [PCB & Case Data](https://github.com/foostan/crkbd)
 
+To make a version of the UTF file to install run 'qmk compile -kb crkbd/rev1 -km default -e CONVERT_TO=blok"
+
 Make example for this keyboard (after setting up your build environment):
 
 ```sh
