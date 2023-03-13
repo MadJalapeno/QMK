@@ -12,11 +12,6 @@
         "mousekey": true,
         "nkro": true
     },
-    "encoder": {
-        "rotary": [
-            {"pin_a": "GP2", "pin_b": "GP1"}
-        ]
-    },
     "matrix_pins": {
         "cols": ["GP3", "GP4", "GP5", "GP6"],
         "rows": ["GP7", "GP8", "GP9"]
