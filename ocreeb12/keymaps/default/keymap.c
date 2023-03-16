@@ -36,6 +36,17 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
               // Mappings for 1st Encoder          // Mappings for 2nd Encoder
     [_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(RGB_MOD, RGB_RMOD)   },
     [_RGB ] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_PGUP, KC_PGDN)   }
-
 };
 #endif
+
+bool dip_switch_update_user(uint8_t index, bool active) { 
+    switch (index) {
+        case 0:         // ENC0_SW
+            if(active)  // ENC0 pressed
+            { tap_code( KC_MUTE ); } 
+            else        // ENC0 released 
+            {  }
+            break;
+    }
+    return true;
+}

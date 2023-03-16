@@ -24,13 +24,13 @@
     #define RGBLIGHT_EFFECT_TWINKLE
     #define RGBLED_NUM 4
     #define RGBLIGHT_LIMIT_VAL 120
-    #define RGBLIGHT_HUE_STEP 10
-    #define RGBLIGHT_SAT_STEP 17
-    #define RGBLIGHT_VAL_STEP 17
+    #define RGBLIGHT_HUE_STEP 7
+    #define RGBLIGHT_SAT_STEP 7
+    #define RGBLIGHT_VAL_STEP 7
 #endif
 
 
-//Encoder setup
+//Encoders setup
 // kmk setup
 // encoders.pins = ((board.A2, board.A1, board.A0, False), (board.SCK, board.MISO, board.MOSI, False),)
 // A2 = GP28 = pad A
@@ -43,5 +43,7 @@
 //
 #define ENCODERS_PAD_A { GP28, GP18 } // where does each encoder pad A connect
 #define ENCODERS_PAD_B { GP27, GP20 } // where does each encoder pad B connect
-#define ENCODER_RESOLUTION 4
-#define ENCODER_MAP_KEY_DELAY 10
+#define ENCODER_RESOLUTION 1
+#define ENCODER_MAP_KEY_DELAY 80
+// use encoder push buttons as dip switches
+#define DIP_SWITCH_PINS { GP26, GP19 }
