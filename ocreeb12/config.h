@@ -6,6 +6,8 @@
 // Adafruit KB2040 Pinout
 // https://cdn-learn.adafruit.com/assets/assets/000/106/984/original/adafruit_products_Adafruit_KB2040_Pinout.png?1638564074
 
+#define TAP_CODE_DELAY 10
+
 // RGB LED setup
 #define RGB_DI_PIN GP10
 #define RGBLED_NUM 4
@@ -44,6 +46,6 @@
 #define ENCODERS_PAD_A { GP28, GP18 } // where does each encoder pad A connect
 #define ENCODERS_PAD_B { GP27, GP20 } // where does each encoder pad B connect
 #define ENCODER_RESOLUTION 1
-#define ENCODER_MAP_KEY_DELAY 80
+// #define ENCODER_MAP_KEY_DELAY 10
 // use encoder push buttons as dip switches
 #define DIP_SWITCH_PINS { GP26, GP19 }
