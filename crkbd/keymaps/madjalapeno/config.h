@@ -31,11 +31,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define QUICK_TAP_TERM 0
 //#define TAPPING_TERM 100
 
-#define SPLIT_OLED_ENABLE
-#define I2C_DRIVER I2CD1
-#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
+#ifdef OLED_ENABLE
+    //#define SSD1306OLED
+    #define I2C_DRIVER I2CD0
+    #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
+    #define SPLIT_OLED_ENABLE
+    #include "oled.h"
+#endif
 
-#ifdef RGBLIGHT_ENABLE
+
+#ifdef RGBLIGHT_ENABLEs
     #define RGBLIGHT_EFFECT_BREATHING
     #define RGBLIGHT_EFFECT_RAINBOW_MOOD
     #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
