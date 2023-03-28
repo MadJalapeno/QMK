@@ -20,23 +20,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-//#define USE_MATRIX_I2C
-
 /* Select hand configuration */
 
 #define MASTER_LEFT
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-//#define QUICK_TAP_TERM 0
-//#define TAPPING_TERM 100
-
 #ifdef OLED_ENABLE
-    //#define SSD1306OLED
-    #define I2C_DRIVER I2CD0
-    #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
+    #define SSD1306OLED
+    #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"   
+    #define I2C_DRIVER I2CD1
+    #define OLED_DISPLAY_ADDRESS 0x3C
     #define SPLIT_OLED_ENABLE
-    #include "oled.h"
 #endif
 
 
@@ -48,9 +43,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_EFFECT_KNIGHT
     #define RGBLIGHT_EFFECT_CHRISTMAS
     #define RGBLIGHT_EFFECT_STATIC_GRADIENT
-    #define RGBLIGHT_EFFECT_RGB_TEST
-    #define RGBLIGHT_EFFECT_ALTERNATING
-    #define RGBLIGHT_EFFECT_TWINKLE
+    //#define RGBLIGHT_EFFECT_RGB_TEST
+    //#define RGBLIGHT_EFFECT_ALTERNATING
+    //#define RGBLIGHT_EFFECT_TWINKLE
     #define RGBLIGHT_LIMIT_VAL 120
     #define RGBLIGHT_HUE_STEP 10
     #define RGBLIGHT_SAT_STEP 17
