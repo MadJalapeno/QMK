@@ -1,9 +1,9 @@
 #include QMK_KEYBOARD_H
 #include <stdio.h>
 
-#define _QWERTY 0      // default base layer
-#define _LOWER 1   // numbers and cursors
-#define _RAISE 2     // characters
+#define _QWERTY 0       // default base layer
+#define _LOWER 1        // numbers and cursors       
+#define _RAISE 2        // characters
 #define _ADJUST 3       // pretty RGB stuff
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSPC,
+       KC_TAB,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_DEL,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -58,12 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 #ifdef OLED_ENABLE
-//    #include "oled.h"
+   #include "oled.h"
 
-// Draw to OLED
-bool oled_task_user() {
-    oled_set_cursor(0,1);
-    oled_write("Hello World!", false);
-    return false;
-}
+
 #endif

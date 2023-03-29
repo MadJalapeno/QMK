@@ -27,10 +27,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define EE_HANDS
 
 #ifdef OLED_ENABLE
-    #define SSD1306OLED
     #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"   
-    #define I2C_DRIVER I2CD1
-    #define OLED_DISPLAY_ADDRESS 0x3C
+    #define I2C_DRIVER I2CD0
     #define SPLIT_OLED_ENABLE
 #endif
 

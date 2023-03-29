@@ -5,6 +5,10 @@
 
 // Adafruit KB2040 Pinout
 // https://cdn-learn.adafruit.com/assets/assets/000/106/984/original/adafruit_products_Adafruit_KB2040_Pinout.png?1638564074
+//
+// using the STEMMA QT with an OLED
+// https://learn.adafruit.com/using-qmk-on-rp2040-microcontrollers/kb2040-one-key-keyboard-with-oled-display
+//
 
 #define TAP_CODE_DELAY 10
 
