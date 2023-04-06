@@ -18,7 +18,7 @@
 
 #include <stdio.h>
 
-bool oled_on(void);
+//bool oled_on(void);
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   if (is_keyboard_master()) {
@@ -27,6 +27,18 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return OLED_ROTATION_180;  // rotates secondary display by 180 degrees
   }
   return rotation;
+}
+
+// timeout start
+bool     is_oled_enabled = true, is_oled_locked = false;
+uint32_t oled_timer                             = 0;
+
+void oled_timer_reset(void) {
+    oled_timer = timer_read32();
+}
+
+void housekeeping_task_user(void) {
+    is_oled_enabled = is_oled_locked ? true : !(timer_elapsed32(oled_timer) > 60000);
 }
 
 //#define L_BASE 0
@@ -243,6 +255,14 @@ void oled_render_logo(void) {
 
 // Draw to OLED
 bool oled_task_user() {
+
+    if (!is_oled_enabled) {
+        oled_off();
+        return false;
+    } else {
+        oled_on();
+    }
+
     if (is_keyboard_master()) {
         oled_render_layer_state();
         oled_render_keylog();
@@ -250,12 +270,14 @@ bool oled_task_user() {
         oled_render_logo();
         oled_scroll_left();
     }
-    return false;
+    return true;
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
     set_keylog(keycode, record);
+    oled_timer_reset();
+
   }
   return true;
 }
